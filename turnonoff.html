@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style>
+
+button {
+	border: none;
+	background-color: transparent;
+	border-radius: 50%;
+	outline: none;
+	text-decoration: none;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	background-color: #000000;
+}
+
+.div1 {
+	text-align: center;
+}
+
+.img {
+	text-align: center;
+	outline: none;
+	border: none;
+}
+
+.text1{
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	font-size: 64px;
+	color: #FFF;
+	opacity: 0.1;
+}
+.text2{
+	position: absolute;
+	top: 10%;
+	right: 10%;
+	font-size: 64px;
+	color: #FFF;
+	opacity: 0.1;
+}
+
+
+
+
+</style>
+
+</head>
+<body>
+
+<div class="img">
+	<img src="off.png">
+</div>
+
+<div class="div1">
+	<button><img class="b" src="boff.png" width="100" height="100"></button>
+</div>
+
+
+<div class="text1">İŞIĞI</div>
+<div class="text2">YANDIR</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous">
+
+</script>
+
+<script>
+
+var onoff = document.querySelector('button');
+var body = document.querySelector('body');
+var b = document.querySelectorAll('img')[1];
+var img = document.querySelector('img');
+var txt1 = document.querySelectorAll('.text1')[0];
+var txt2 = document.querySelectorAll('.text2')[0];
+var opr = true;
+
+onoff.addEventListener('click', function (e){
+	if (opr === true) {
+		body.style.backgroundColor = 'white';
+		img.src = 'on.png';
+		b.src = 'bon.png';
+		txt1.style.color = 'black';
+		txt1.style.opacity = '1.0';
+		txt2.style.color = 'black';
+		txt2.style.opacity = '1.0';
+		txt2.innerHTML = 'SÖNDÜR';
+		opr = false;
+	}else {
+		body.style.backgroundColor = 'black';
+		img.src = 'off.png';
+		b.src = 'boff.png';
+		txt1.style.color = 'white';
+		txt1.style.opacity = '0.1';
+		txt2.style.color = 'white';
+		txt2.style.opacity = '0.1';
+		txt2.innerHTML = 'YANDIR';
+		opr = true;
+	}
+})
+
+</script>
+
+</body>
+</html>
